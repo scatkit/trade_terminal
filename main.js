@@ -1,14 +1,11 @@
-function getMonthlyPrice(tier){
-  switch (tier){
-    case "basic":
-      return 10_000
-    case "premium":
-      return 15_000
-    case "enterprice":
-      return 50_000
-    default:
-      return 0
- }
+function getRentExeption(address){
+  if (address){
+    return 28000
+  }
 }
 
-export { getMonthlyPrice }
+const minRentCost = (function (tokenAddress){
+  return getRentExeption(tokenAddress)
+})("32kjr344ht45jkth34kjt3h");
+ 
+console.log(minRentCost)
