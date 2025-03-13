@@ -1,11 +1,14 @@
-function getRentExeption(address){
-  if (address){
-    return 28000
+const poolsInfo = {
+  name: "WSOL",
+  decimals: 9,
+  url: null,
+  setEndpoin(endpoint){
+   if (!this.url){return this.url = endpoint} 
   }
 }
 
-const minRentCost = (function (tokenAddress){
-  return getRentExeption(tokenAddress)
-})("32kjr344ht45jkth34kjt3h");
- 
-console.log(minRentCost)
+poolsInfo.setEndpoin("https://here.com")
+poolsInfo.setEndpoin("https://here.com")
+console.log(poolsInfo.url)
+
+
