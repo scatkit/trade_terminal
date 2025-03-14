@@ -1,35 +1,15 @@
-const Token = {
-  name: "MLG",
-  decimals: 6,
-  getDecimals(){
-    return `${this.decimals} decimals`
-  }
-}
-const WrapedSol = Object.create(Token)
+const notification = {
+  notify(recipient, message) {
+    return `Notification for ${recipient}: ${message}`;
+  },
+};
 
+const systemNotification = Object.create(notification)
 
-WrapedSol.decimals = 9
-
-class TokenNew{
-  constructor(){
-    this.name = "MLG";
-    this.decimals = 6;
-  }
-  getDecimals(){
-    console.log("decimals",this.decimals)
-  }
+systemNotification.broadcast = function(message){
+  return `Bordcast to all users: ${message}`
 }
 
-class WrapedSolNew extends TokenNew{
-  constructor(){
-    super()
-  }
-  getDecimals(){
-    console.log("decimals",this.decimals)
-  }
-}
+let x = systemNotification.broadcast("bostonskat4@gmail.com", "yooo")
+console.log(x)
 
-
-const wsol = new WrapedSolNew()
-wsol.getDecimals()
-console.log(WrapedSolNew.__proto__)
