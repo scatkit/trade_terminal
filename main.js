@@ -1,15 +1,19 @@
-const notification = {
-  notify(recipient, message) {
-    return `Notification for ${recipient}: ${message}`;
-  },
+const user = {
+    name: "Default User",
+    type: "user",
 };
 
-const systemNotification = Object.create(notification)
+const adminUser = Object.create(user);
+adminUser.type = "admin"
 
-systemNotification.broadcast = function(message){
-  return `Bordcast to all users: ${message}`
-}
+const isAdmin = () =>{
+  if (Object.getPrototypeOf(obj) === adminUser){
+    return true
+  } else{
+    return false
+  }
+} 
 
-let x = systemNotification.broadcast("bostonskat4@gmail.com", "yooo")
+let obj = Object.create(adminUser)
+const x = isAdmin(obj)
 console.log(x)
-
