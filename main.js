@@ -1,14 +1,16 @@
-const poolsInfo = {
-  name: "WSOL",
-  decimals: 9,
-  url: null,
-  setEndpoin(endpoint){
-   if (!this.url){return this.url = endpoint} 
+const user = {
+  name: "Ally",
+  addresses:{
+    walletAddress: "3pvmL7M24uqzudAxUYmvixtkWTC5yaDhTUSyB8cewnJK",
+    getWallet(){
+      return `wallet: ${this.walletAddress}`
+    },
+  },
+  getName(){
+    console.log(this)
+    return this.name
   }
 }
 
-poolsInfo.setEndpoin("https://here.com")
-poolsInfo.setEndpoin("https://here.com")
-console.log(poolsInfo.url)
-
+console.log(user.getName())
 
