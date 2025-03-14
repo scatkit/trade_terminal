@@ -1,15 +1,16 @@
-const GetReserves = (baseReserve, quoteReserve) =>{
-  let vaultB = 400
-  let vaultQ = 2
-  return {
-    baseReserve,
-    quoteReserve,
-    vaultB,
-    vaultQ,
+class Token{
+  static decimals = 6
+  #decimals
+  constructor(address, decimals){
+    this.address = address,
+    this.#decimals = decimals
+  }
+  
+  static getTokenDecimals(){ 
+    return this.decimals
   }
 }
 
-
-let x = GetReserves("Fm67yCGR8BCPNrJzfoF1dvoPnJkEm658pmxBV6u3qwrE", "GmMautNDHVBsaxt2W38SMi2kqAgrG1HZJkHhdE7Ypump")
-console.log(x)
-
+const memeTokenA = new Token("9TY6DUg1VSssYH5tFE95qoq5hnAGFak4w3cn72sJNCoV", 6)
+const memeTokenB = new Token("E3rijajUad1jSJkvxwSA5YkWvNLTsNhRQTHkcybwKXrC", 7)
+console.log(Token.getTokenDecimals())
