@@ -1,16 +1,20 @@
-const user = {
-  name: "Ally",
-  addresses:{
-    walletAddress: "3pvmL7M24uqzudAxUYmvixtkWTC5yaDhTUSyB8cewnJK",
-    getWallet(){
-      return `wallet: ${this.walletAddress}`
-    },
-  },
-  getName(){
-    console.log(this)
-    return this.name
-  }
+const tokens = {
+  one: 1,
+  two: 2,
+  thee: 3,
 }
 
-console.log(user.getName())
+const vehicles = {
+  "supra": "4g6",
+  "evo": "4g63"
+}
+
+const all_things = {...tokens, ...vehicles}
+
+console.log(all_things["supra"])
+
+vehicles["supra"] = "rb26"
+
+console.log(all_things["supra"])
+
 
