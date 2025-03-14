@@ -1,24 +1,26 @@
-class Message {
-  static totalMessagesSent = 0;
-  static totalMsgLength = 0;
-  
-  constructor(recipient, sender, body) {
+class Sender {
+  constructor(recipient) {
     this.recipient = recipient;
-    this.sender = sender;
-    this.body = body;
-    Message.totalMessagesSent++
-    Message.totalMsgLength += body.length
+  }
+  sendMessage(message) {
+    throw new Error("sendMessage method must be implemented by subclasses");
   }
   
-  static getAverageMessageLength(){
-    return (Message.totalMessagesSent === 0? 0 : Message.totalMessagesSent/Message.totalMsgLength).toFixed(2)
+  toString(){
+    return `Recepient: ${this.recipient}`
   }
 }
 
-new Message("555-111","555-2222","Fr the Ancients!")
-new Message("555-111","555-2222","Fe Ancients!")
-new Message("555-111","555-2222","F Ancients!")
-new Message("555-111","555-2222","FAncients!")
-new Message("555-111","555-2222","Fncients!")
-new Message("511","555-2222","Fts!")
-console.log(Message.getAverageMessageLength())
+class Email extends Sender{
+  constructor(recepient, body){
+    super(recepient)
+    this.body = body
+  }
+  toString(){
+    return `${super.toString()} with body ${this.body }`
+  }
+}
+
+
+const email = new Email("bostonskat4@gmail.com", "Fuck you!")
+console.log(email.toString())
