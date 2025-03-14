@@ -1,20 +1,15 @@
-const tokens = {
-  one: 1,
-  two: 2,
-  thee: 3,
+const GetReserves = (baseReserve, quoteReserve) =>{
+  let vaultB = 400
+  let vaultQ = 2
+  return {
+    baseReserve,
+    quoteReserve,
+    vaultB,
+    vaultQ,
+  }
 }
 
-const vehicles = {
-  "supra": "4g6",
-  "evo": "4g63"
-}
 
-const all_things = {...tokens, ...vehicles}
-
-console.log(all_things["supra"])
-
-vehicles["supra"] = "rb26"
-
-console.log(all_things["supra"])
-
+let x = GetReserves("Fm67yCGR8BCPNrJzfoF1dvoPnJkEm658pmxBV6u3qwrE", "GmMautNDHVBsaxt2W38SMi2kqAgrG1HZJkHhdE7Ypump")
+console.log(x)
 
